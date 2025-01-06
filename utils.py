@@ -7,7 +7,7 @@ from langchain.prompts import PromptTemplate
 from langchain_community.document_loaders.pdf import PyPDFLoader
 from langchain_community.vectorstores.faiss import FAISS
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_openai.embeddings import OpenAIEmbeddings
+from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain_openai.chat_models import ChatOpenAI
 
 from dotenv import load_dotenv, find_dotenv
