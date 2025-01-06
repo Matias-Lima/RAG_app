@@ -28,8 +28,6 @@ def importacao_documentos():
         documentos.extend(documentos_arquivo)
     return documentos
 
-
-
 def split_de_documentos(documentos):
     recur_splitter = RecursiveCharacterTextSplitter(
         chunk_size=2500,
@@ -54,11 +52,8 @@ def cria_vector_store(documentos):
 def cria_chain_conversa():
 
     documentos = importacao_documentos()
-    st.write(documentos)
     documentos = split_de_documentos(documentos)
-    st.write(documentos)
     vector_store = cria_vector_store(documentos)
-    st.write(documentos)
 
     chat = ChatOpenAI(model=get_config('model_name'))
     memory = ConversationBufferMemory(
